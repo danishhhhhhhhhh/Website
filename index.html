@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Buy premium Football Jerseys online. High-quality, stylish and official team apparel for football fans." />
+    <meta name="keywords" content="Football Jerseys, Manchester United, Real Madrid, FC Barcelona, Buy Jerseys Online" />
+    <meta name="author" content="Football Jersey Store" />
+    <title>Football Jersey Store</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-dark text-white text-center py-3">
+        <h1>Football Jersey Store</h1>
+        <nav class="mt-2">
+            <a href="#products" class="text-white mx-2">Shop</a>
+            <a href="#contact" class="text-white mx-2">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero d-flex align-items-center justify-content-center text-center text-white" style="background-image: url('football-hero.jpg'); height: 100vh; background-size: cover; background-position: center;">
+        <div class="overlay bg-opacity-50 p-4 rounded">
+            <h2>Gear Up with Official Football Jerseys</h2>
+            <p>Explore our collection of premium football jerseys from top clubs.</p>
+            <button class="btn btn-primary mt-3" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Slider Section -->
+    <div id="jerseyCarousel" class="carousel slide my-5 container" data-bs-ride="carousel">
+        <div class="carousel-inner rounded">
+            <div class="carousel-item active">
+                <img src="manutd-jersey.jpg" class="d-block w-100" alt="Manchester United Jersey">
+            </div>
+            <div class="carousel-item">
+                <img src="realmadrid-jersey.jpg" class="d-block w-100" alt="Real Madrid Jersey">
+            </div>
+            <div class="carousel-item">
+                <img src="barcelona-jersey.jpg" class="d-block w-100" alt="FC Barcelona Jersey">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#jerseyCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-dark rounded" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#jerseyCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-dark rounded" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <!-- Product Section -->
+    <section id="products" class="container my-5">
+        <h3 class="text-center mb-4">Our Jerseys</h3>
+        <div class="row g-4 justify-content-center">
+            <!-- Product Cards -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="manutd-jersey.jpg" class="card-img-top" alt="Manchester United Jersey">
+                    <div class="card-body">
+                        <h5 class="card-title">Manchester United Jersey</h5>
+                        <p class="card-text">Official home jersey of Manchester United. Comfort meets tradition.</p>
+                        <button class="btn btn-success" onclick="scrollToOrder('Manchester United')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="realmadrid-jersey.jpg" class="card-img-top" alt="Real Madrid Jersey">
+                    <div class="card-body">
+                        <h5 class="card-title">Real Madrid Jersey</h5>
+                        <p class="card-text">Show your support with the sleek and iconic Real Madrid home jersey.</p>
+                        <button class="btn btn-success" onclick="scrollToOrder('Real Madrid')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="barcelona-jersey.jpg" class="card-img-top" alt="FC Barcelona Jersey">
+                    <div class="card-body">
+                        <h5 class="card-title">FC Barcelona Jersey</h5>
+                        <p class="card-text">Classic Blaugrana design with modern performance fabric. For true fans.</p>
+                        <button class="btn btn-success" onclick="scrollToOrder('FC Barcelona')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section id="contact" class="container my-5">
+        <h4 class="text-center mb-4">Place Your Order</h4>
+        <form action="order.php" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name" class="form-control" required aria-required="true">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required aria-required="true">
+            </div>
+            <div class="mb-3">
+                <label for="jacket" class="form-label">Select Jersey</label>
+                <select id="jacket" name="jersey" class="form-select" required>
+                    <option value="Manchester United">Manchester United</option>
+                    <option value="Real Madrid">Real Madrid</option>
+                    <option value="FC Barcelona">FC Barcelona</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Submit Order</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2025 Football Jersey Store. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+
+    <!-- Inline JS for scrolling -->
+    <script>
+        function scrollToOrder(jersey) {
+            document.getElementById('jacket').value = jersey;
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>

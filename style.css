@@ -1,0 +1,27 @@
+/* style.css */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.hero h2 {
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+.bg-opacity-50 {
+    background-color: rgba(0, 0, 0, 0.5);
+}
